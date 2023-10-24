@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './home.module.scss'
 import { getFetchData } from "services/analytics/query";
-
+import useSWR from 'swr';
 
 
 export async function Home({ dataFromGraph, dataFromAxios, pathname, error, errorText }: any) {

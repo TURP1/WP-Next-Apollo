@@ -2,6 +2,7 @@ import { homeStaticProps } from "screens/home/serverData";
 import React from "react";
 import { Home } from "screens/home/home";
 import { getDataFromHeaders } from 'services/headersHelper';
+import { apolloClient } from "services/apolo/client";
 
 
 export async function getData() {

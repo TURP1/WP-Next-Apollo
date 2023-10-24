@@ -14,9 +14,8 @@ export const getAxiosData = async () => {
 
 export const getFetchData = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/wp-json/wp/v2/pages?per_page=1&order=asc&orderby=date`);
-    console.log(response);
-
+    const response = await fetch(`${BASE_URL}/wp-json/wp/v2/pages?per_page=1&order=asc&orderby=date`, { cache: 'force-cache' });
+    console.log("FETCH");
     return response.json();
   } catch (e) {
     console.log(e, "Something was wrong with the getting fetch...");
