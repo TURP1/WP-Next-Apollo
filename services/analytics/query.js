@@ -19,5 +19,6 @@ export const getFetchData = async () => {
     return response.json();
   } catch (e) {
     console.log(e, "Something was wrong with the getting fetch...");
+    
   }
 };
