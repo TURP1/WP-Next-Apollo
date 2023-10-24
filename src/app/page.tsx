@@ -16,6 +16,7 @@ export default async function Page() {
   const propsData = await getData();
   const dataFromGraph = propsData?.dataFromGraph;
   const dataFromAxios = propsData?.dataFromAxios;
+  const dataFromFetch = propsData?.dataFromFetch;
   const error = propsData?.error;
   const errorText = propsData?.errorText;
 
@@ -23,6 +24,7 @@ export default async function Page() {
   return <Home
     dataFromGraph={dataFromGraph}
     dataFromAxios={dataFromAxios}
+    dataFromFetch={dataFromFetch}
     error={error}
     errorText={errorText}
     pathname={pathname}

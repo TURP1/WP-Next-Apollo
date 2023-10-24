@@ -1,4 +1,4 @@
-import { getAxiosData } from "services/analytics/axiosQuery";
+import { getAxiosData } from "services/analytics/query";
 import { apolloClient } from "services/apolo/client";
 import { WP_HOME_PAGE } from "services/apolo/queries";
 
@@ -8,11 +8,15 @@ export const homeStaticProps = async () => {
 
 	let dataFromAxios: any = null;
 	let dataFromGraph: any = null;
+	let dataFromFetch: any = null;
 	let error = false;
 	let errorText:any = null;
 
 	try {
 		dataFromAxios = await getAxiosData();
+		// console.log("dataFromAxios", dataFromAxios);
+
+		dataFromFetch = await getAxiosData();
 		// console.log("dataFromAxios", dataFromAxios);
 
 		dataFromGraph = await apolloClient.query({
@@ -28,6 +32,7 @@ export const homeStaticProps = async () => {
 		props: {
 			dataFromGraph: dataFromGraph.data.pages.nodes,
 			dataFromAxios,
+			dataFromFetch,
 			error,
 			errorText
 		},
