@@ -12,7 +12,7 @@ export async function getData() {
 
 export default async function Page() {
   // const { serverPathname: pathname } = await getDataFromHeaders();
-
+  
   //Next caching is not working if we use next/headers 
   //readMore 
   // https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#opting-out-of-data-caching
