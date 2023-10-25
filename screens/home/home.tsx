@@ -13,11 +13,11 @@ export async function Home({dataFromFetch, dataFromGraph}: any) {
       <div className={styles.container}>
         <div className={styles.content}>
           <section className={styles.block}>
-            <h2>Apollo</h2>
+            <h2>Apollo with cashing</h2>
             <div>{titleGraph}</div>
           </section>
           <section className={styles.block}>
-            <h2>Fetch</h2>
+            <h2>SSR with cashing Fetch</h2>
             <div>{titleFetch}</div>
           </section>
           <FetchSection/>

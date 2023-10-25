@@ -22,7 +22,7 @@ export const FetchSection = () => {
 
     return (
         <section className={styles.block}>
-            <h2>Query</h2>
+            <h2>CSR without caching fetch</h2>
             <div>{text}</div>
             <button className={styles.blockButton} onClick={onClickHandler}>
                 Axios Client Query
