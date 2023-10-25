@@ -32,9 +32,7 @@ const customRedirect = ({redirectPath, pathname , query ,request} :TRedirect )=>
 
 export function middleware(request: NextRequest) {
 
-	
 	const { pathname } = request.nextUrl
-	console.log(pathname)
 	const  headersList = request.headers ;
 	const cookiesList = request.cookies
 	const userAgent = headersList.get("user-agent") || "";

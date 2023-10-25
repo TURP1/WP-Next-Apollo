@@ -2,6 +2,7 @@ import { homeStaticProps } from "screens/home/serverData";
 import React from "react";
 import { Home } from "screens/home/home";
 
+
 export async function getData() {
   const response = await homeStaticProps();
 
@@ -9,7 +10,6 @@ export async function getData() {
 }
 
 export default async function Page() {
-
   const propsData = await getData();
   const dataFromGraph = propsData?.dataFromGraph;
   const dataFromFetch = propsData?.dataFromFetch;
