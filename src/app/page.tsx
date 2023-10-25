@@ -1,8 +1,7 @@
 import { homeStaticProps } from "screens/home/serverData";
 import React from "react";
 import { Home } from "screens/home/home";
-import { getDataFromHeaders } from 'services/headersHelper';
-import { apolloClient } from "services/apolo/client";
+// import { getDataFromHeaders } from 'services/headersHelper';
 
 
 export async function getData() {
@@ -12,22 +11,19 @@ export async function getData() {
 }
 
 export default async function Page() {
-  const { serverPathname: pathname } = await getDataFromHeaders();
+  // const { serverPathname: pathname } = await getDataFromHeaders();
+
+  //Next caching is not working if we use next/headers 
+  //readMore 
+  // https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#opting-out-of-data-caching
 
   const propsData = await getData();
   const dataFromGraph = propsData?.dataFromGraph;
-  const dataFromAxios = propsData?.dataFromAxios;
   const dataFromFetch = propsData?.dataFromFetch;
-  const error = propsData?.error;
-  const errorText = propsData?.errorText;
-
 
   return <Home
     dataFromGraph={dataFromGraph}
-    dataFromAxios={dataFromAxios}
     dataFromFetch={dataFromFetch}
-    error={error}
-    errorText={errorText}
-    pathname={pathname}
+    // pathname={pathname}
     />
 }
